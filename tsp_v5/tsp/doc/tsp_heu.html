@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.5.3" />
+<title>tsp.tsp_heu API documentation</title>
+<meta name="description" content="Some simple heuristics for the symmetric TSP …" />
+<link href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css' rel='stylesheet'>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/8.0.0/sanitize.min.css' rel='stylesheet'>
+<style>.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{font-weight:bold}#index h4 + ul{margin-bottom:.6em}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.name small{font-weight:normal}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase;cursor:pointer}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}.admonition{padding:.1em .5em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title"><code>tsp.tsp_heu</code> module</h1>
+</header>
+<section id="section-intro">
+<p>Some simple heuristics for the symmetric TSP.</p>
+<p>author :
+Andreas Klose
+version :
+1.0 (29/3/2019)</p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="tsp.tsp_heu.choice"><code class="name flex">
+<span>def <span class="ident">choice</span></span>(<span>...)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>choice(a, size=None, replace=True, p=None)</p>
+<p>Generates a random sample from a given 1-D array</p>
+<pre><code>    !!! versionadded "Added in version:&amp;ensp;1.7.0"
+</code></pre>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>a</code></strong> :&ensp;<code>1</code>-<code>D</code> <code>array</code>-<code>like</code> or <code>int</code></dt>
+<dd>If an ndarray, a random sample is generated from its elements.
+If an int, the random sample is generated as if a were np.arange(a)</dd>
+<dt><strong><code>size</code></strong> :&ensp;<code>int</code> or <code>tuple</code> of <code>ints</code>, optional</dt>
+<dd>Output shape.
+If the given shape is, e.g., <code>(m, n, k)</code>, then
+<code>m * n * k</code> samples are drawn.
+Default is None, in which case a
+single value is returned.</dd>
+<dt><strong><code>replace</code></strong> :&ensp;<code>boolean</code>, optional</dt>
+<dd>Whether the sample is with or without replacement</dd>
+<dt><strong><code>p</code></strong> :&ensp;<code>1</code>-<code>D</code> <code>array</code>-<code>like</code>, optional</dt>
+<dd>The probabilities associated with each entry in a.
+If not given the sample assumes a uniform distribution over all
+entries in a.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>samples</code></strong> :&ensp;<code>single</code> <code>item</code> or <code>ndarray</code></dt>
+<dd>The generated random samples</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><strong><code>ValueError</code></strong></dt>
+<dd>If a is an int and less than zero, if a or p are not 1-dimensional,
+if a is an array-like of size 0, if p is not a vector of
+probabilities, if a and p have different lengths, or if
+replace=False and the sample size is greater than the population
+size</dd>
+</dl>
+<h2 id="see-also">See Also</h2>
+<p>randint, shuffle, permutation</p>
+<h2 id="examples">Examples</h2>
+<p>Generate a uniform random sample from np.arange(5) of size 3:</p>
+<pre><code>&gt;&gt;&gt; np.random.choice(5, 3)
+array([0, 3, 4])
+&gt;&gt;&gt; #This is equivalent to np.random.randint(0,5,3)
+</code></pre>
+<p>Generate a non-uniform random sample from np.arange(5) of size 3:</p>
+<pre><code>&gt;&gt;&gt; np.random.choice(5, 3, p=[0.1, 0, 0.3, 0.6, 0])
+array([3, 3, 0])
+</code></pre>
+<p>Generate a uniform random sample from np.arange(5) of size 3 without
+replacement:</p>
+<pre><code>&gt;&gt;&gt; np.random.choice(5, 3, replace=False)
+array([3,1,0])
+&gt;&gt;&gt; #This is equivalent to np.random.permutation(np.arange(5))[:3]
+</code></pre>
+<p>Generate a non-uniform random sample from np.arange(5) of size
+3 without replacement:</p>
+<pre><code>&gt;&gt;&gt; np.random.choice(5, 3, replace=False, p=[0.1, 0, 0.3, 0.6, 0])
+array([2, 3, 0])
+</code></pre>
+<p>Any of the above can be repeated with an arbitrary array-like
+instead of just integers. For instance:</p>
+<pre><code>&gt;&gt;&gt; aa_milne_arr = ['pooh', 'rabbit', 'piglet', 'Christopher']
+&gt;&gt;&gt; np.random.choice(aa_milne_arr, 5, p=[0.5, 0.1, 0.1, 0.3])
+array(['pooh', 'pooh', 'pooh', 'Christopher', 'piglet'],
+
+
+  dtype='|S11')
+</code></pre></section>
+</dd>
+<dt id="tsp.tsp_heu.christofides"><code class="name flex">
+<span>def <span class="ident">christofides</span></span>(<span>problem, display=True, animate=True)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Apply the Christofides' heuristic.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>problem</code></strong> :&ensp;<code>class</code></dt>
+<dd>TSP problem object has returned by function load_problem
+of the package tsplib95.</dd>
+<dt><strong><code>display</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>I true (default) a figure of the minimum spanning tree,
+the Eulerian cycle and the resulting route is displayed.</dd>
+<dt><strong><code>animate</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If true (default) the Eulerian cycle and the route are
+drawn in an animated way.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>routeLen</code></strong> :&ensp;<code>int</code></dt>
+<dd>Length of the route.</dd>
+<dt><strong><code>route</code></strong> :&ensp;<code>list</code> of <code>int</code></dt>
+<dd>List of points on the route.</dd>
+</dl></section>
+</dd>
+<dt id="tsp.tsp_heu.doInsertion"><code class="name flex">
+<span>def <span class="ident">doInsertion</span></span>(<span>problem, nearest=True)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Computes solution using nearest or farthest insertion with random
+start point.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>problem</code></strong> :&ensp;<code>class</code></dt>
+<dd>TSP problem object has returned by function load_problem
+of the package tsplib95.</dd>
+<dt><strong><code>nearest</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If false, farthest insertion is applied. Otherwise
+nearest insertion is applied (default)</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>routeLen</code></strong> :&ensp;<code>int</code></dt>
+<dd>Length of the route.</dd>
+<dt><strong><code>route</code></strong> :&ensp;<code>list</code> of <code>int</code></dt>
+<dd>List of points on the route.</dd>
+</dl></section>
+</dd>
+<dt id="tsp.tsp_heu.minSpanTree"><code class="name flex">
+<span>def <span class="ident">minSpanTree</span></span>(<span>problem, display=True, animate=True)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Apply the minimum spanning tree heuristic.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>problem</code></strong> :&ensp;<code>class</code></dt>
+<dd>TSP problem object has returned by function load_problem
+of the package tsplib95.</dd>
+<dt><strong><code>display</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>I true (default) a figure of the minimum spanning tree,
+the Eulerian cycle and the resulting route is displayed.</dd>
+<dt><strong><code>animate</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If true (default) the Eulerian cycle and the route are
+drawn in an animated way.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>routeLen</code></strong> :&ensp;<code>int</code></dt>
+<dd>Length of the route.</dd>
+<dt><strong><code>route</code></strong> :&ensp;<code>list</code> of <code>int</code></dt>
+<dd>List of points on the route.</dd>
+</dl></section>
+</dd>
+<dt id="tsp.tsp_heu.nearestNeighbour"><code class="name flex">
+<span>def <span class="ident">nearestNeighbour</span></span>(<span>problem)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Computes solution using nearest neighbour with random start point.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>problem</code></strong> :&ensp;<code>class</code></dt>
+<dd>TSP problem object has returned by function load_problem
+of the package tsplib95.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>routeLen</code></strong> :&ensp;<code>int</code></dt>
+<dd>Length of the route.</dd>
+<dt><strong><code>route</code></strong> :&ensp;<code>list</code> of <code>int</code></dt>
+<dd>List of points on the route.</dd>
+</dl></section>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="tsp" href="index.html">tsp</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="tsp.tsp_heu.choice" href="#tsp.tsp_heu.choice">choice</a></code></li>
+<li><code><a title="tsp.tsp_heu.christofides" href="#tsp.tsp_heu.christofides">christofides</a></code></li>
+<li><code><a title="tsp.tsp_heu.doInsertion" href="#tsp.tsp_heu.doInsertion">doInsertion</a></code></li>
+<li><code><a title="tsp.tsp_heu.minSpanTree" href="#tsp.tsp_heu.minSpanTree">minSpanTree</a></code></li>
+<li><code><a title="tsp.tsp_heu.nearestNeighbour" href="#tsp.tsp_heu.nearestNeighbour">nearestNeighbour</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.5.3</a>.</p>
+</footer>
+</body>
+</html>
