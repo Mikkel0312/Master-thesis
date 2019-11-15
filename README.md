@@ -1,7 +1,7 @@
 # Master-thesis
 Code for my Master's thesis: "Using route length approximations to solve the Covering Tour Problem".
 
-In my Master's thesis i solved the Covering Tour Problem using 4 different heuristic solution methods:
+In my Master's thesis I solved the Covering Tour Problem using 4 different heuristic solution methods:
 1. A Cost-allocation method
 2. An "Online"/"Offline" regression method
 3. A mathematical program with different TSP route length approximations as the objective function
@@ -10,7 +10,7 @@ In my Master's thesis i solved the Covering Tour Problem using 4 different heuri
 The code for the first three heuristics is in "ConstructionCTP.py".
 The code for the fourth heuristic is in "MDMC.py"
 
-And i also developed an improvement heuristic, which improves an initial solution. The code for this algorithm is in "ImproveCTP.py"
+I also developed an improvement heuristic, which improves an initial solution. The code for this algorithm is in "ImproveCTP.py"
 
 To compare the solutions obtained by the heuristics against the optimal solution, I solved the CTP to optimality using CPLEX and Baldacci's formulation of the CTP. The python code for this is in "CTP_TSPLIB.py" and the OPL model is in "CoveringTourProblem.mod". 
 
